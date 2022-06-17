@@ -5,6 +5,8 @@ import api from "../api";
 import CheckBoxField from "./checkBoxField";
 import SelectField from "./selectField";
 import _ from "lodash";
+import PhoneMaskedInput from "./phoneMaskedInput";
+import DateMaskedInput from "./dateMaskedInput";
 
 const EditUserPage = () => {
   const [data, setData] = useState({
@@ -39,7 +41,7 @@ const EditUserPage = () => {
         birthday: data.birthday,
       })
     );
-  }, []);
+  }, [userId]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -60,17 +62,17 @@ const EditUserPage = () => {
             value={data.name}
             onChange={handleChange}
           />
-          <TextField
-            label="Телефон"
-            name="phone"
+          <PhoneMaskedInput
+            onChange={handleChange}
             value={data.phone}
-            onChange={handleChange}
+            name="phone"
+            label="Телефон"
           />
-          <TextField
-            label="День рождения"
-            name="birthday"
-            value={data.birthday}
+          <DateMaskedInput
             onChange={handleChange}
+            value={data.birthday}
+            name="birthday"
+            label="День рождения"
           />
           <SelectField
             label="Выбери свою должность"
@@ -86,7 +88,6 @@ const EditUserPage = () => {
             onChange={handleChange}
             name="isArchive"
           />
-
           <button type="submit" className="btn btn-primary w-100 mx-auto">
             Обновить
           </button>

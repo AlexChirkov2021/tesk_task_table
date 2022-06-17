@@ -11,6 +11,10 @@ const UserTable = ({ users, onSort, selectedSort }) => {
     },
     role: { name: "Должность", component: (user) => <p>{user.role}</p> },
     phone: { name: "Телефон", component: (user) => <p>{user.phone}</p> },
+    birthday: {
+      name: "День рождения",
+      component: (user) => <p>{user.birthday}</p>,
+    },
   };
   return (
     <Table

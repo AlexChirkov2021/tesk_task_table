@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { useHistory, useParams } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import TextField from "./textField";
 import api from "../api";
 import CheckBoxField from "./checkBoxField";
 import SelectField from "./selectField";
 import _ from "lodash";
+import PhoneMaskedInput from "./phoneMaskedInput";
+import DateMaskedInput from "./dateMaskedInput";
 
 const AddNewUser = () => {
   const [users, setUsers] = useState();
@@ -27,7 +29,6 @@ const AddNewUser = () => {
   }, []);
 
   const history = useHistory();
-  const { userId } = useParams();
   const handleChange = (target) => {
     setData((prevState) => ({
       ...prevState,
@@ -54,17 +55,17 @@ const AddNewUser = () => {
             value={data.name}
             onChange={handleChange}
           />
-          <TextField
-            label="Телефон"
-            name="phone"
+          <PhoneMaskedInput
+            onChange={handleChange}
             value={data.phone}
-            onChange={handleChange}
+            name="phone"
+            label="Телефон"
           />
-          <TextField
-            label="День рождения"
-            name="birthday"
-            value={data.birthday}
+          <DateMaskedInput
             onChange={handleChange}
+            value={data.birthday}
+            name="birthday"
+            label="День рождения "
           />
           <SelectField
             label="Выбери свою должность"

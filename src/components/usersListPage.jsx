@@ -5,11 +5,13 @@ import _ from "lodash";
 import Pagination from "./pagination";
 import { paginate } from "../utils/paginate";
 import { Link } from "react-router-dom";
+import { format, parseISO } from "date-fns";
 
 const UsersListPage = () => {
   const [users, setUsers] = useState();
   const [currentPage, setCurrentPage] = useState(1);
   const [roles, setRoles] = useState();
+  const [dates, setDates] = useState();
   const [sortBy, setSortBy] = useState({ path: "", order: "" });
   const [selectedRoles, setSelectedRoles] = useState();
   const [checkStatus, setCheckStatus] = useState(false);
@@ -25,6 +27,12 @@ const UsersListPage = () => {
       .then((data) => setRoles(_.uniq(data.map(({ role }) => role))));
   }, []);
 
+  useEffect(() => {
+    api.users
+      .fetchAll()
+      .then((data) => setDates(data.map(({ birthday }) => birthday)));
+  }, []);
+
   const handleSort = (item) => {
     setSortBy(item);
   };
@@ -34,12 +42,13 @@ const UsersListPage = () => {
   };
 
   const handleSortByBirthdayAsc = () => {
-    setSortBy({
-      path: "birthday",
-      order: "asc",
-    });
+    console.log(dates);
   };
-  const handleSortByBirthdayDesc = () => {
+  const handleSortByBirthdayDesc = (array) => {
+    array.map((item) => {
+      const [date, month, year] = item;
+      console.log(year, date, month, year);
+    });
     setSortBy({
       path: "birthday",
       order: "desc",

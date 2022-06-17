@@ -5,7 +5,7 @@ const users = [
     isArchive: false,
     role: "driver",
     phone: "+7 (883) 508-3269",
-    birthday: "1982-12-02",
+    birthday: "12.02.1982",
   },
   {
     id: 2,
@@ -13,7 +13,7 @@ const users = [
     isArchive: true,
     role: "waiter",
     phone: "+7 (823) 440-3602",
-    birthday: "1986-01-26",
+    birthday: "26.01.1986",
   },
   {
     id: 3,
@@ -21,7 +21,7 @@ const users = [
     isArchive: false,
     role: "driver",
     phone: "+7 (971) 575-2645",
-    birthday: "1990-11-29",
+    birthday: "29.11.1990",
   },
   {
     id: 4,
@@ -29,7 +29,7 @@ const users = [
     isArchive: true,
     role: "waiter",
     phone: "+7 (945) 447-2286",
-    birthday: "1987-01-06",
+    birthday: "06.01.1987",
   },
   {
     id: 5,
@@ -37,7 +37,7 @@ const users = [
     isArchive: false,
     role: "cook",
     phone: "+7 (948) 523-2964",
-    birthday: "1982-01-26",
+    birthday: "26.01.1982",
   },
   {
     id: 6,
@@ -45,7 +45,7 @@ const users = [
     isArchive: true,
     role: "cook",
     phone: "+7 (929) 592-3637",
-    birthday: "1972-02-25",
+    birthday: "25.02.1972",
   },
   {
     id: 7,
@@ -53,7 +53,7 @@ const users = [
     isArchive: false,
     role: "driver",
     phone: "+7 (872) 568-2916",
-    birthday: "1979-05-31",
+    birthday: "31.05.1979",
   },
   {
     id: 8,
@@ -61,7 +61,7 @@ const users = [
     isArchive: false,
     role: "driver",
     phone: "+7 (977) 521-3479",
-    birthday: "1981-09-11",
+    birthday: "11.09.1981",
   },
   {
     id: 9,
@@ -69,7 +69,7 @@ const users = [
     isArchive: true,
     role: "driver",
     phone: "+7 (868) 569-3159",
-    birthday: "1988-06-07",
+    birthday: "07.06.1988",
   },
   {
     id: 10,
@@ -77,7 +77,7 @@ const users = [
     isArchive: true,
     role: "driver",
     phone: "+7 (808) 592-2480",
-    birthday: "1978-06-20",
+    birthday: "20.06.1978",
   },
   {
     id: 11,
@@ -85,7 +85,7 @@ const users = [
     isArchive: false,
     role: "cook",
     phone: "+7 (899) 403-2387",
-    birthday: "1987-01-20",
+    birthday: "20.01.1987",
   },
   {
     id: 12,
@@ -93,7 +93,7 @@ const users = [
     isArchive: true,
     role: "waiter",
     phone: "+7 (933) 582-2673",
-    birthday: "1987-05-25",
+    birthday: "25.05.1987",
   },
   {
     id: 13,
@@ -101,7 +101,7 @@ const users = [
     isArchive: true,
     role: "waiter",
     phone: "+7 (951) 517-3787",
-    birthday: "1972-12-16",
+    birthday: "16.12.1972",
   },
   {
     id: 14,
@@ -109,7 +109,7 @@ const users = [
     isArchive: true,
     role: "cook",
     phone: "+7 (807) 492-3627",
-    birthday: "1986-04-17",
+    birthday: "17.04.1986",
   },
   {
     id: 15,
@@ -117,7 +117,7 @@ const users = [
     isArchive: true,
     role: "waiter",
     phone: "+7 (927) 488-2568",
-    birthday: "1982-03-24",
+    birthday: "24.03.1982",
   },
   {
     id: 16,
@@ -125,7 +125,7 @@ const users = [
     isArchive: true,
     role: "cook",
     phone: "+7 (875) 517-3873",
-    birthday: "1983-06-07",
+    birthday: "07.06.1983",
   },
   {
     id: 17,
@@ -133,7 +133,7 @@ const users = [
     isArchive: false,
     role: "waiter",
     phone: "+7 (877) 450-3253",
-    birthday: "1994-12-03",
+    birthday: "03.12.1994",
   },
 ];
 
