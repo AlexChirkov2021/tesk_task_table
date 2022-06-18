@@ -63,6 +63,14 @@ const UsersListPage = () => {
   const clearFilter = () => {
     setSelectedRoles("");
     setCheckStatus(false);
+    dispatch({
+      type: "SET_PATH",
+      payload: "",
+    });
+    dispatch({
+      type: "SET_ORDER",
+      payload: "",
+    });
   };
   return (
     <div className="d-flex">
