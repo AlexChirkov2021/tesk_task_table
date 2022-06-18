@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import UsersListPage from "../components/usersListPage";
-import EditUserPage from "../components/editUserPage";
+import UsersListPage from "../components/page/usersListPage";
+import EditUserPage from "../components/page/editUserPage";
 
 const Users = () => {
   const params = useParams();

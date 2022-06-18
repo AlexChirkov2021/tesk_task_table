@@ -2,11 +2,11 @@ import React from "react";
 import TableBody from "./tableBody";
 import TableHeader from "./tableHeader";
 
-const Table = ({ onSort, selectedSort, columns, data }) => {
+const Table = ({ columns, data }) => {
   return (
     <table className="table">
-      <TableHeader {...{ onSort, selectedSort, columns }} />
-      <TableBody {...{ columns, data }} />
+      <TableHeader columns={columns} />
+      <TableBody columns={columns} data={data} />
     </table>
   );
 };

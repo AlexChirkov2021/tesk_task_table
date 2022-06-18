@@ -1,8 +1,8 @@
 import React from "react";
-import Table from "./table";
+import Table from "../components/common/table";
 import { Link } from "react-router-dom";
 
-const UserTable = ({ users, onSort, selectedSort }) => {
+const UserTable = ({ users }) => {
   const columns = {
     name: {
       path: "name",
@@ -11,19 +11,8 @@ const UserTable = ({ users, onSort, selectedSort }) => {
     },
     role: { name: "Должность", component: (user) => <p>{user.role}</p> },
     phone: { name: "Телефон", component: (user) => <p>{user.phone}</p> },
-    birthday: {
-      name: "День рождения",
-      component: (user) => <p>{user.birthday}</p>,
-    },
   };
-  return (
-    <Table
-      columns={columns}
-      data={users}
-      onSort={onSort}
-      selectedSort={selectedSort}
-    />
-  );
+  return <Table columns={columns} data={users} />;
 };
 
 export default UserTable;
