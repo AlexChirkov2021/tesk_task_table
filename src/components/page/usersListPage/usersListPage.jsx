@@ -40,6 +40,7 @@ const UsersListPage = () => {
 
   const handleChangeRole = ({ target }) => {
     setSelectedRoles(target.value);
+    setCheckStatus(false);
   };
   const toggleCheckbox = () => {
     setCheckStatus((prevState) => !prevState);
@@ -60,7 +61,7 @@ const UsersListPage = () => {
   const sortedUsers = _.orderBy(filteredUsers, [sortBy.path], [sortBy.order]);
   const usersCrop = paginate(sortedUsers, page, pageSize);
   const clearFilter = () => {
-    setSelectedRoles();
+    setSelectedRoles("");
     setCheckStatus(false);
   };
   return (
@@ -85,7 +86,7 @@ const UsersListPage = () => {
         </div>
       </div>
       <div className="d-flex flex-column">
-        <ul className="nav">
+        <ul className="nav d-flex justify-content-center">
           <li className="nav-item">
             <Link className="nav-link " aria-current="page" to="users/add">
               Добавить пользователя

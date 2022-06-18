@@ -15,6 +15,7 @@ const PhoneMaskedInput = ({ value, onChange, name, label }) => {
           value={value}
           name={name}
           className="form-control"
+          placeholder="+7 (999) 999-9999"
         />
       </div>
     </div>
