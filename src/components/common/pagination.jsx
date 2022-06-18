@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import _ from "loadsh";
+import _ from "lodash";
 
 const Pagination = ({ itemsCount, pageSize }) => {
   const currentPage = useSelector((state) => state.currentPage.page);
