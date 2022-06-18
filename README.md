@@ -1,7 +1,7 @@
 1. При нажатии на кнопку "Пользователи" переходит во вкладку users и появляется таблица с пользователями, полученные из employees.json. 
 Все данные хранятся в localStorage, добавление и изменение происходит в localStorage. 
 
-![image](https://user-images.githubusercontent.com/83139924/174440205-d227c0ba-3a77-47ff-b41e-4f2d7c1f6244.png)
+![image](https://user-images.githubusercontent.com/83139924/174456707-721bed30-d56c-497f-b685-1fef636d9815.png)
 
 2. Возможность выбора должности в выпадающем меню
 
