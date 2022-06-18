@@ -1,14 +1,10 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import PropTypes from "prop-types";
 
-const SelectField = ({
-  label,
-  value,
-  onChange,
-  defaultOption,
-  options,
-  name,
-}) => {
+const SelectField = ({ label, value, onChange, defaultOption, name }) => {
+  const options = useSelector((state) => state.roles.roles);
+  console.log(options);
   const handleChange = ({ target }) => {
     onChange({ name: target.name, value: target.value });
   };

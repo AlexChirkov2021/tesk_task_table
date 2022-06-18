@@ -2,11 +2,11 @@ import React from "react";
 import TableBody from "./tableBody";
 import TableHeader from "./tableHeader";
 
-const Table = ({ columns, data }) => {
+const Table = ({ data }) => {
   return (
     <table className="table">
-      <TableHeader columns={columns} />
-      <TableBody columns={columns} data={data} />
+      <TableHeader />
+      <TableBody data={data} />
     </table>
   );
 };

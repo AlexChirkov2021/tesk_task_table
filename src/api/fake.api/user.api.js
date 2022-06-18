@@ -1,3 +1,8 @@
+const reverseDate = (data) => {
+  const [date, month, year] = data.split(".");
+  return `${year}.${month}.${date}`;
+};
+
 const users = [
   {
     id: 1,
@@ -146,11 +151,30 @@ const fetchAll = () =>
     resolve(JSON.parse(localStorage.getItem("users")));
   });
 
+const addNewBirthday = () =>
+  new Promise((resolve) => {
+    window.setTimeout(function () {
+      const users = JSON.parse(localStorage.getItem("users"));
+      for (var i = 0; i < users.length; i++) {
+        users[i] = {
+          ...users[i],
+          birthdayNew: reverseDate(users[i].birthday),
+        };
+      }
+      localStorage.setItem("users", JSON.stringify(users));
+      resolve(users[i]);
+    }, 2000);
+  });
+
 const update = (id, data) =>
   new Promise((resolve) => {
     const users = JSON.parse(localStorage.getItem("users"));
     const userIndex = users.findIndex((u) => u.id === id);
-    users[userIndex] = { ...users[userIndex], ...data };
+    users[userIndex] = {
+      ...users[userIndex],
+      ...data,
+      birthdayNew: reverseDate(data.birthday),
+    };
     localStorage.setItem("users", JSON.stringify(users));
     resolve(users[userIndex]);
   });
@@ -170,6 +194,7 @@ const addUser = (id, data) =>
       ...users[userIndex],
       id: Number(`${userIndex + 1}`),
       ...data,
+      birthdayNew: reverseDate(data.birthday),
     };
     localStorage.setItem("users", JSON.stringify(users));
     resolve(users[userIndex]);
@@ -177,6 +202,7 @@ const addUser = (id, data) =>
 
 export default {
   fetchAll,
+  addNewBirthday,
   getById,
   update,
   addUser,

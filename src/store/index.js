@@ -1,6 +1,7 @@
 import { createStore, combineReducers, applyMiddleware } from "redux";
 import { usersReducer } from "./usersReducer";
 import { rolesReducer } from "./rolesReducer";
+import { columnsReducer } from "./columnsReducer";
 import { currentPageReducer } from "./currentPageReducer";
 import { composeWithDevTools } from "redux-devtools-extension";
 import { sortReducer } from "./sortReducer";
@@ -11,6 +12,7 @@ const rootReducer = combineReducers({
   currentPage: currentPageReducer,
   roles: rolesReducer,
   users: usersReducer,
+  columns: columnsReducer,
 });
 
 export const store = createStore(

@@ -1,7 +1,8 @@
 import React from "react";
 import { useSelector } from "react-redux";
 
-const TableHeader = ({ columns }) => {
+const TableHeader = () => {
+  const columns = useSelector((state) => state.columns);
   const sortBy = useSelector((state) => state.sortBy);
   const rendeSortArrow = (path, currentPath) => {
     if (path === currentPath) {

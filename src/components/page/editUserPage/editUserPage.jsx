@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useHistory, useParams } from "react-router-dom";
-import TextField from "../../common/form/textField";
+import { useSelector, useDispatch } from "react-redux";
+import { fetchRoles } from "../../../store/asyncActions/roles";
 import api from "../../../api";
+import TextField from "../../common/form/textField";
 import CheckBoxField from "../../common/form/checkBoxField";
 import SelectField from "../../common/form/selectField";
-import _ from "lodash";
 import PhoneMaskedInput from "../../common/form/phoneMaskedInput";
 import DateMaskedInput from "../../common/form/dateMaskedInput";
 
@@ -16,12 +17,13 @@ const EditUserPage = () => {
     isArchive: false,
     birthday: "",
   });
-  const [roles, setRoles] = useState([]);
+  const roles = useSelector((state) => state.roles.roles);
+  const dispatch = useDispatch();
+
   useEffect(() => {
-    api.users
-      .fetchAll()
-      .then((data) => setRoles(_.uniq(data.map(({ role }) => role))));
-  }, []);
+    dispatch(fetchRoles());
+  }, [dispatch]);
+
   const history = useHistory();
   const { userId } = useParams();
   const handleChange = (target) => {

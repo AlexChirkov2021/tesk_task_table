@@ -1,7 +1,9 @@
 import React from "react";
 import _ from "loadsh";
+import { useSelector } from "react-redux";
 
-const TableBody = ({ data, columns }) => {
+const TableBody = ({ data }) => {
+  const columns = useSelector((state) => state.columns);
   const rednerContent = (item, column) => {
     if (columns[column].component) {
       const component = columns[column].component;

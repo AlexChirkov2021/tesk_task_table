@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchUsers } from "../../../store/asyncActions/users";
 import { fetchRoles } from "../../../store/asyncActions/roles";
-import UserTable from "../../../ui/userTable";
+import Table from "../../common/table";
 import _ from "lodash";
 import Pagination from "../../common/pagination";
 import { paginate } from "../../../utils/paginate";
@@ -10,18 +10,24 @@ import { Link } from "react-router-dom";
 import RolesList from "../../common/rolesList";
 
 const UsersListPage = () => {
-  const dispatch = useDispatch();
   const [selectedRoles, setSelectedRoles] = useState();
   const [checkStatus, setCheckStatus] = useState(false);
   const pageSize = 10;
+  const dispatch = useDispatch();
   const sortBy = useSelector((state) => state.sortBy);
   const page = useSelector((state) => state.currentPage.page);
   const users = useSelector((state) => state.users.users);
-  const roles = useSelector((state) => state.roles.roles);
-  console.log(roles);
   useEffect(() => {
     dispatch(fetchUsers());
   }, [dispatch]);
+
+  const startProgram = () => {
+    return;
+  };
+
+  useEffect(() => {
+    startProgram();
+  }, []);
 
   useEffect(() => {
     dispatch(fetchRoles());
@@ -35,6 +41,16 @@ const UsersListPage = () => {
     dispatch({
       type: "SET_ORDER",
       payload: sortBy.order === value ? "desc" : "asc",
+    });
+  };
+  const handleSortByBirthday = (value) => {
+    dispatch({
+      type: "SET_PATH",
+      payload: "birthdayNew",
+    });
+    dispatch({
+      type: "SET_ORDER",
+      payload: value,
     });
   };
 
@@ -102,7 +118,7 @@ const UsersListPage = () => {
           </li>
         </ul>
 
-        {count > 0 && <UserTable users={usersCrop} />}
+        {count > 0 && <Table data={usersCrop} />}
         <div className="d-flex justify-content-center">
           <Pagination itemsCount={count} pageSize={pageSize} />
         </div>
@@ -113,6 +129,18 @@ const UsersListPage = () => {
           onClick={() => handleSortByName("asc")}
         >
           Сортировка по имени
+        </button>
+        <button
+          className="btn btn-secondary mt-2 mb-2"
+          onClick={() => handleSortByBirthday("desc")}
+        >
+          Сортировка по дате рождения(возрастание)
+        </button>
+        <button
+          className="btn btn-secondary mt-2 mb-2"
+          onClick={() => handleSortByBirthday("asc")}
+        >
+          Сортировка по дате рождения(убывание)
         </button>
       </div>
     </div>

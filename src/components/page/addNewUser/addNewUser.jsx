@@ -1,15 +1,17 @@
 import React, { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
-import TextField from "../../common/form/textField";
+import { fetchUsers } from "../../../store/asyncActions/users";
+import { fetchRoles } from "../../../store/asyncActions/roles";
 import api from "../../../api";
+import TextField from "../../common/form/textField";
 import CheckBoxField from "../../common/form/checkBoxField";
 import SelectField from "../../common/form/selectField";
-import _ from "lodash";
 import PhoneMaskedInput from "../../common/form/phoneMaskedInput";
 import DateMaskedInput from "../../common/form/dateMaskedInput";
 
 const AddNewUser = () => {
-  const [users, setUsers] = useState();
+  const users = useSelector((state) => state.users.users);
   const [data, setData] = useState({
     name: "",
     isArchive: false,
@@ -17,18 +19,18 @@ const AddNewUser = () => {
     phone: "",
     birthday: "",
   });
-  const [roles, setRoles] = useState([]);
-  useEffect(() => {
-    api.users
-      .fetchAll()
-      .then((data) => setRoles(_.uniq(data.map(({ role }) => role))));
-  }, []);
 
-  useEffect(() => {
-    api.users.fetchAll().then((data) => setUsers(data));
-  }, []);
-
+  const dispatch = useDispatch();
   const history = useHistory();
+
+  useEffect(() => {
+    dispatch(fetchUsers());
+  }, [dispatch]);
+
+  useEffect(() => {
+    dispatch(fetchRoles());
+  }, [dispatch]);
+
   const handleChange = (target) => {
     setData((prevState) => ({
       ...prevState,
@@ -71,7 +73,6 @@ const AddNewUser = () => {
             label="Выбери свою должность"
             defaultOption="Выбрать..."
             name="role"
-            options={roles}
             onChange={handleChange}
             value={data.role}
           />
