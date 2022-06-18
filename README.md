@@ -1,5 +1,5 @@
 1.При нажатии на кнопку "Пользователи" переходит во вкладку users и появляется таблица с пользователями, полученные из employees.json
-![image](https://user-images.githubusercontent.com/83139924/174439876-95cec3e2-d92a-4544-b8af-e27a313fdd64.png)
+![image](https://user-images.githubusercontent.com/83139924/174440191-3e8054c1-e9c4-4f58-bb9a-8f0a2d25a4a1.png)
 2.Возможность выбора должности в выпадающем меню
 ![image](https://user-images.githubusercontent.com/83139924/174439902-b8ffb449-acd6-4147-bd07-37428433f1da.png)
 3. При выборе должности происходит фильтрация
