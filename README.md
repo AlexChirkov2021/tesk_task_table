@@ -9,7 +9,7 @@
 
 3. При выборе должности происходит фильтрация
 
-![image](https://user-images.githubusercontent.com/83139924/174440280-475b22e8-3a24-43d0-9666-12884ba693bc.png)
+![image](https://user-images.githubusercontent.com/83139924/174456736-1b6439de-4ee2-451b-af8f-8e3bdd663081.png)
 
 4. При нажатии на чекбокс "В архиве" происходит фильтрация
 
