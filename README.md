@@ -5,7 +5,7 @@
 
 2. Возможность выбора должности в выпадающем меню
 
-![image](https://user-images.githubusercontent.com/83139924/174439902-b8ffb449-acd6-4147-bd07-37428433f1da.png)
+![image](https://user-images.githubusercontent.com/83139924/174456720-aadf5d0a-0d98-4bfd-95ff-64364e985902.png)
 
 3. При выборе должности происходит фильтрация
 
